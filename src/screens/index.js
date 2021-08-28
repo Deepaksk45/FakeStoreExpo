@@ -1,5 +1,7 @@
 import Login from "./auth/Login";
-import Signup from "./auth/Signup";
+// import SignUp from "./auth/Signup";
 import Home from "./Home";
-
-export { Login, Signup, Home };
+import ProductListing from "./ProductListing";
+import Splash from "./Splash";
+import Product from "./Product";
+export { Login, Home, ProductListing, Splash, Product };

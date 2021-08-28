@@ -1,27 +1,20 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
-import { Button, Badge, Tab, ThemeProvider } from "react-native-elements";
-import { Login, Signup, Home } from "./src/screens";
+import { StyleSheet, Text, View, SafeAreaView } from "react-native";
+// import { Login, Signup, Home } from "./src/screens";
 
-const theme = {
-  Avatar: {
-    rounded: true,
-  },
-  Button: {
-    titleStyle: {
-      color: "red",
-    },
-  },
-};
+import { Provider } from "react-redux";
+import { store } from "./src/redux";
+import Routes from "./src/routes";
+
 export default function App() {
   const [index, setindex] = useState(undefined);
   return (
-    <ThemeProvider theme={theme}>
-      <View style={styles.container}>
-        <Login />
-      </View>
-    </ThemeProvider>
+    <>
+      <Provider store={store}>
+        <Routes />
+      </Provider>
+    </>
   );
 }
 
